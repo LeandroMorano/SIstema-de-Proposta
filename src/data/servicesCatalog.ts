@@ -1,0 +1,793 @@
+import { ServiceDefinition, ServiceTypeId } from '../types/proposal';
+
+export const SERVICES_CATALOG: Record<ServiceTypeId, ServiceDefinition> = {
+  identidade_visual: {
+    id: 'identidade_visual',
+    name: 'Desenvolvimento de Identidade Visual',
+    category: 'Branding',
+    shortDesc: 'Construção completa de marca, conceito, logotipo, manual de identidade visual e aplicações institucionais.',
+    defaultScopeItems: [
+      'Diagnóstico e Alinhamento Estratégico de Marca;',
+      'Estudo de Naming e Conceituação Visual;',
+      'Criação de Logotipo (Símbolo, Tipografia e Variações Cromáticas);',
+      'Elaboração de Guia de Marca / Manual de Identidade Visual Completo;',
+      'Papelaria Corporativa (Cartão de Visita, Papel Timbrado, Envelopes, Pastas);',
+      'Assinaturas Digitais de E-mail e Kit de Redes Sociais (Avatar, Capa e Templates).',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Diagnóstico e Conceito de Marca',
+        details: [
+          'Reunião de imersão e análise de concorrentes diretos e indiretos;',
+          'Definição dos pilares de marca, tom de voz e território visual;',
+          'Desenvolvimento de moodboards conceituais e direcionamento estético.',
+        ],
+      },
+      {
+        title: '02. Criação do Logotipo',
+        details: [
+          'Desenvolvimento de versões exclusivas de símbolo e tipografia proprietária;',
+          'Estudo de proporção áurea, grids construtivos e área de não interferência;',
+          'Variações em versões horizontal, vertical, ícone/redução e monocromática;',
+          'Entrega em formatos vetoriais (AI, EPS, PDF) e digitais (SVG, PNG transparente em alta definição).',
+        ],
+      },
+      {
+        title: '03. Manual de Identidade Visual (Brand Guidelines)',
+        details: [
+          'Definição da paleta de cores primária e secundária (CMYK, RGB, Pantone e HEX);',
+          'Tipografia institucional para títulos, textos corridos e mídias digitais;',
+          'Regras de aplicação, dimensionamentos mínimos e proibições de uso;',
+          'Padrões gráficos (patterns, grafismos e texturas da marca).',
+        ],
+      },
+      {
+        title: '04. Aplicações e Papelaria Institucional',
+        details: [
+          'Design de cartão de visitas (impresso e interativo digital com QR Code);',
+          'Papel timbrado (versão digital para Word e gabarito gráfico para gráfica);',
+          'Pasta institucional, envelope ofício e saco;',
+          'Assinatura digital padronizada de e-mail para colaboradores;',
+          'Gabaritos de crachá funcional e cordão institucional.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Após aprovada a proposta comercial, será agendada em até 05 dias úteis a reunião de briefing;',
+      'Em até 10 dias úteis após a reunião de briefing, será apresentada a conceituação e primeiras propostas de logotipo;',
+      'Em até 05 dias úteis após a aprovação do logotipo, será apresentado o Guia de Marca e desdobramentos de papelaria;',
+      'Em até 25 dias úteis da aprovação inicial, serão entregues todos os arquivos finais abertos e fechados;',
+      'Briefing será realizado em 05 dias úteis;',
+      'Ajustes solicitados serão feitos em até 03 dias úteis (limite de 03 rodadas de alterações);',
+      'Rebriefing entregue em até 03 dias úteis.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 8 },
+      { role: 'Projetos', hours: 4 },
+      { role: 'Diretor de Criação', hours: 14 },
+      { role: 'Assistente de Arte', hours: 22 },
+      { role: 'Redator', hours: 6 },
+      { role: 'Revisor', hours: 2 },
+    ],
+    contractTypeDefault: 'pontual',
+    defaultMonths: 1,
+    sigaJobReferences: [
+      { jobId: 'Job 11967', client: 'Cap-Lab', description: 'Criação de Logotipo', hours: '24:00' },
+      { jobId: 'Job 11968', client: 'Cap-Lab', description: 'Elaboração do Guia de Marca', hours: '28:60' },
+      { jobId: 'Job 12803', client: 'VertiMob', description: 'Naming', hours: '14:56' },
+      { jobId: 'Job 12804', client: 'VertiMob', description: 'Logotipo e Identidade Visual', hours: '36:05' },
+      { jobId: 'Job 12805', client: 'VertiMob', description: 'Guia de Marca', hours: '14:09' },
+      { jobId: 'Job 17566', client: 'Mauro Sá', description: 'Criação de Naming, Logotipo e Identidade Visual', hours: '35:20' },
+      { jobId: 'Job 18935', client: 'Consórcio Ampliação Segredo', description: 'Elaboração de Logotipo', hours: '18:57' },
+    ],
+    iconName: 'Palette',
+  },
+
+  desenvolvimento_site: {
+    id: 'desenvolvimento_site',
+    name: 'Desenvolvimento de Site',
+    category: 'Web & Tech',
+    shortDesc: 'Criação de site institucional de alta performance ou e-commerce WordPress/WooCommerce responsivo, com SEO e LGPD.',
+    defaultScopeItems: [
+      'Arquitetura de Informação, UX Wireframing e Mapa do Site;',
+      'Desenvolvimento de Site Responsivo em WordPress / WooCommerce;',
+      'Implementação de Políticas de SEO On-Page;',
+      'Instalação de Certificado de Segurança SSL (HTTPS) via Cloudflare;',
+      'Adequações à LGPD (Banner de Cookies e Políticas de Privacidade);',
+      'Integrações com Google Analytics 4, Tag Manager e Botão WhatsApp Flutuante;',
+      'Deploy em Servidor de Hospedagem Contratado e Treinamento de Uso.',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Desenvolvimento de Site / E-commerce WordPress',
+        details: [
+          'A contratada fica responsável por desenvolver o site de acordo com a arquitetura definida no briefing;',
+          'Linguagem e tecnologias: WordPress | WooCommerce | PHP moderno | HTML5 | Tailwind CSS / CSS;',
+          'Gestor administrativo intuitivo para inclusão e exclusão autônoma de conteúdos, textos e imagens;',
+          'Site 100% responsivo e autoajustável às plataformas mobile, tablet e desktop;',
+          'Integração com banco de dados MySQL e servidores cloud de alta velocidade;',
+          'Deploy final do site no servidor de hospedagem homologado pelo cliente.',
+        ],
+      },
+      {
+        title: '02. Implementação de Políticas de SEO',
+        details: [
+          'A Hiro Comunicação ficará responsável por otimizar a estrutura do site para garantir máxima relevância nos buscadores;',
+          'Otimização de Title Pages e Meta Descriptions personalizadas;',
+          'Estruturação hierárquica de Heading Tags (H1, H2, H3);',
+          'Otimização de imagens com atributos Alt text e compressão WebP;',
+          'Configuração de sitemap.xml e arquivo robots.txt;',
+          'Cadastro e validação no Google Search Console e Google Analytics 4.',
+        ],
+      },
+      {
+        title: '03. Certificado Digital SSL e Segurança',
+        details: [
+          'Instalação e ativação do protocolo de segurança HTTPS (Hypertext Transfer Protocol Secure);',
+          'Configuração de regras de proteção e firewall nativo da hospedagem ou Cloudflare;',
+          'Proteção anti-força bruta na área administrativa e boas práticas de blindagem.',
+        ],
+      },
+      {
+        title: '04. Adequações à LGPD (Lei Geral de Proteção de Dados)',
+        details: [
+          'Sistema inteligente de aceite e controle da Política de Cookies;',
+          'Inclusão de cláusulas e aceite explícito de Política de Privacidade em formulários de contato e leads;',
+          'Produção e formatação técnica das páginas de Política de Privacidade e Termos de Uso.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Após aprovada a proposta comercial, será agendada em até 05 dias úteis a reunião de briefing;',
+      'Em até 05 dias úteis após a reunião de briefing, será apresentado o mapa do site final (sitemap);',
+      'Em até 05 dias úteis após a aprovação do mapa do site, serão apresentadas as primeiras versões da home;',
+      'Em até 10 dias úteis após a aprovação da home, serão apresentadas as versões de subpáginas;',
+      'Em até 30 dias úteis após a reunião de briefing, serão entregues todos os serviços descritos nesta proposta;',
+      'Briefing será realizado em 05 dias úteis;',
+      'Alterações solicitadas serão feitas em até 02 dias úteis;',
+      'Rebriefing entregue em 03 dias úteis.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 6 },
+      { role: 'Projetos', hours: 2 },
+      { role: 'Diretor de Criação', hours: 8 },
+      { role: 'Assistente de Arte', hours: 14 },
+      { role: 'Redator', hours: 4 },
+      { role: 'Revisor', hours: 2 },
+      { role: 'Analista de SEO', hours: 4 },
+      { role: 'Programador', hours: 14 },
+    ],
+    contractTypeDefault: 'pontual',
+    defaultMonths: 1,
+    sigaJobReferences: [
+      { jobId: 'Job 12171', client: 'Cultibras', description: 'Novo Site - Home', hours: '63:59' },
+      { jobId: 'Job 12352', client: 'Carlton Hotéis', description: 'Novo Site - Home', hours: '67:38' },
+      { jobId: 'Job 12538', client: 'Economapas', description: 'Novo Site - Home', hours: '52:17' },
+      { jobId: 'Job 14383', client: 'Mundivox', description: 'Site - Home', hours: '64:17' },
+      { jobId: 'Job 16219', client: 'CRDC', description: 'Site Novo: Home', hours: '24:26' },
+      { jobId: 'Job 18546', client: 'Ody Park Tur', description: 'Desenvolvimento de site (Home)', hours: '17:45' },
+      { jobId: 'Job 18740', client: 'Temazec', description: 'Site TMZC: Home', hours: '22:47' },
+    ],
+    iconName: 'Globe',
+  },
+
+  midia_paga: {
+    id: 'midia_paga',
+    name: 'Gestão de Mídia Paga',
+    category: 'Marketing & Performance',
+    shortDesc: 'Gestão estratégica e técnica contínua de campanhas de tráfego pago (Google Ads, Meta Ads, LinkedIn Ads, TikTok Ads) com relatórios analíticos.',
+    defaultScopeItems: [
+      'Plano de Mídia Digital Trimestral;',
+      'Setup Técnico de Campanhas de Anúncios;',
+      'Criação Contínua de Criativos e Anúncios;',
+      'Gestão Diária e Otimização de Mídia Digital;',
+      'Dashboard Hiro (Painel de Métricas e Conversão);',
+      'Relatórios Analíticos Mensais de Desempenho.',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Plano de Mídia Digital',
+        details: [
+          'Reunião de briefing detalhado para alinhamento de metas e personas;',
+          'Aprovação das palavras-chave positivas e lista robusta de negativas;',
+          'Definição das campanhas segundo funis de público (topo, meio e fundo de funil);',
+          'Ciclo de campanhas trimestrais (04 planos completos ao longo do período contratual);',
+          'Apresentações com sugestões de campanhas comerciais de conversão e campanhas institucionais.',
+        ],
+      },
+      {
+        title: '02. Setup de Campanhas de Anúncios',
+        details: [
+          'Configuração de metas, limites de CPC/CPA máximo e estratégias de lance inteligentes;',
+          'Estruturação de grupos de anúncios e testes A/B de criativos e copys;',
+          'Segmentação demográfica, comportamental, geográfica e listas de remarketing;',
+          'Cadastro nos canais contratados (Google Ads, Meta Ads, LinkedIn Ads e TikTok Ads).',
+        ],
+      },
+      {
+        title: '03. Criação de Anúncios',
+        details: [
+          'Criação de novos anúncios e criativos mensais para veiculação nas campanhas ativas;',
+          'Redação publicitária (copywriting persuasivo focado em cliques e conversão);',
+          'Artes nos padrões de cada plataforma (Feed 1:1, Stories/Reels 9:16, Display responsivo).',
+        ],
+      },
+      {
+        title: '04. Gestão e Otimização Diária de Mídia',
+        details: [
+          'Acompanhamento diário da performance, gastos e conversões das campanhas;',
+          'Ajustes ágeis de segmentações, horários, dispositivos e palavras-chave;',
+          'Upload e higienização periódica de bases de dados para remarketing e lookalike.',
+        ],
+      },
+      {
+        title: '05. Dashboard Hiro em Tempo Real',
+        details: [
+          'Disponibilização de painel exclusivo de métricas customizado no Looker Studio;',
+          'Acesso em tempo real aos dados de investimento, leads, CTR, CPC, CPM, impressões e taxas de conversão.',
+        ],
+      },
+      {
+        title: '06. Relatórios Analíticos Mensais',
+        details: [
+          'Envio mensal de relatório analítico executivo;',
+          'Diagnóstico detalhado dos resultados do período e recomendações de melhoria contínua para o ciclo seguinte.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Após aprovada a proposta comercial, será agendada em até 05 dias úteis a reunião de briefing;',
+      'Em até 05 dias úteis após a reunião de briefing, o cronograma e o Plano de Mídia serão apresentados para aprovação;',
+      'Briefing será realizado em até 05 dias úteis;',
+      'Alterações solicitadas serão feitas em até 02 dias úteis;',
+      'Rebriefing entregue em até 03 dias úteis.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 4 },
+      { role: 'Projetos', hours: 1 },
+      { role: 'Diretor de Arte', hours: 1 },
+      { role: 'Assistente de Arte', hours: 4 },
+      { role: 'Redator', hours: 1 },
+      { role: 'Revisor', hours: 1 },
+      { role: 'Mídia', hours: 6 },
+    ],
+    contractTypeDefault: 'mensal',
+    defaultMonths: 13,
+    sigaJobReferences: [
+      { jobId: 'Job 8802', client: 'Hiro Comunicação', description: 'Otimização de anúncios e campanhas', hours: '50:45' },
+      { jobId: 'Job 11928', client: 'Superfitas', description: 'Otimização de anúncios e campanhas', hours: '11:17' },
+      { jobId: 'Job 13504', client: 'Superfitas', description: 'Otimização de anúncios e campanhas', hours: '120:00' },
+      { jobId: 'Job 13503', client: 'DBACorp', description: 'Otimização de anúncios e campanhas', hours: '105:39' },
+      { jobId: 'Job 13505', client: 'JFL Alarmes', description: 'Otimização de anúncios e campanhas', hours: '113:45' },
+      { jobId: 'Job 17588', client: 'Arrivée', description: 'Otimização de anúncios e campanhas', hours: '47:00' },
+    ],
+    iconName: 'TrendingUp',
+  },
+
+  gestao_seo: {
+    id: 'gestao_seo',
+    name: 'Gestão de SEO',
+    category: 'Marketing & Performance',
+    shortDesc: 'Otimização contínua de motores de busca, arquitetura de conteúdo, SEO técnico, blogs estratégicos e relatórios analíticos.',
+    defaultScopeItems: [
+      'Auditoria Técnica Inicial de SEO e Correção de Erros;',
+      'Pesquisa e Estratégia de Palavras-Chave de Alto Impacto;',
+      'Otimizações On-Page Periódicas (Titles, Metas, Headings, Interlinkagem);',
+      'Produção Mensal de Artigos Otimizados para Blog Corporativo;',
+      'Monitoramento de Posicionamento e Saúde Técnica;',
+      'Relatório Analítico Mensal de Tráfego Orgânico e Rankings.',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Auditoria e Correções Técnicas de SEO',
+        details: [
+          'Análise completa de rastreabilidade, indexabilidade e arquitetura de URLs;',
+          'Verificação de Core Web Vitals, tempos de carregamento e compatibilidade mobile;',
+          'Otimização de robots.txt, sitemaps XML e remoção de erros 404 / redirecionamentos 301.',
+        ],
+      },
+      {
+        title: '02. Pesquisa de Palavras-Chave e Arquitetura de Conteúdo',
+        details: [
+          'Mapeamento dos termos mais pesquisados pelo público-alvo;',
+          'Análise de gaps de conteúdo em relação aos principais concorrentes;',
+          'Clusterização de termos para páginas institucionais e temas de blog.',
+        ],
+      },
+      {
+        title: '03. Otimização On-Page e Conteúdo Estratégico',
+        details: [
+          'Redação e aplicação de títulos atrativos e meta descriptions com foco em CTR;',
+          'Organização da hierarquia de cabeçalhos (H1, H2, H3);',
+          'Produção de 02 a 04 artigos densos para blog mensalmente, com foco em autoridade e ranqueamento orgânico;',
+          'Estratégia de link building interno e dados estruturados Schema.org.',
+        ],
+      },
+      {
+        title: '04. Monitoramento e Relatórios Analíticos',
+        details: [
+          'Acompanhamento no Google Search Console, Analytics 4 e ferramentas especializadas;',
+          'Relatório analítico mensal apontando a evolução de palavras-chave, impressões e cliques orgânicos;',
+          'Recomendações técnicas continuadas.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Reunião de alinhamento e auditoria inicial nos primeiros 07 dias úteis do contrato;',
+      'Envio do cronograma mensal de pautas até o dia 20 de cada mês;',
+      'Entrega e publicação dos artigos e otimizações on-page em ciclos quinzenais;',
+      'Relatório analítico de desempenho enviado nos primeiros 05 dias úteis do mês subsequente.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 3 },
+      { role: 'Projetos', hours: 1 },
+      { role: 'Especialista SEO', hours: 10 },
+      { role: 'Redator', hours: 8 },
+      { role: 'Revisor', hours: 2 },
+      { role: 'Programador', hours: 4 },
+    ],
+    contractTypeDefault: 'mensal',
+    defaultMonths: 12,
+    sigaJobReferences: [
+      { jobId: 'Job 13190', client: 'Superfitas', description: 'Otimização do SEO do site', hours: '22:07' },
+      { jobId: 'Job 15472', client: 'Ôguen', description: 'Implementação de Políticas SEO', hours: '22:29' },
+      { jobId: 'Job 18276', client: 'Superfitas', description: 'SEO - PILAR 1: Páginas comerciais (fundo de funil)', hours: '8:30' },
+      { jobId: 'Job 18277', client: 'Superfitas', description: 'SEO - PILAR 2: Conteúdo Educativo no Blog', hours: '5:59' },
+      { jobId: 'Job 17559', client: 'Hiro', description: 'Rankeamento de SEO - Agência Full Service', hours: '2:50' },
+      { jobId: 'Job 17484', client: 'Mundivox', description: 'Otimização SEO', hours: '16:42' },
+      { jobId: 'Job 18239', client: 'CRDC', description: 'Desenvolvimento de Artigos para SEO', hours: '3:29' },
+    ],
+    iconName: 'Search',
+  },
+
+  gestao_geo: {
+    id: 'gestao_geo',
+    name: 'Gestão de GEO (Generative Engine Optimization)',
+    category: 'Marketing & Performance',
+    shortDesc: 'Otimização para mecanismos de busca por Inteligência Artificial (ChatGPT Search, Perplexity, Gemini, Copilot) e Local SEO.',
+    defaultScopeItems: [
+      'Diagnóstico de Visibilidade da Marca em Modelos de Linguagem (LLMs);',
+      'Estruturação de Dados Semânticos e Entidades (Knowledge Graph & Wikidata);',
+      'Otimização de Conteúdo para Síntese RAG e Citações em Respostas de IA;',
+      'Monitoramento de Respostas e Brand Sentiment nos Chats de IA;',
+      'Fortalecimento de Local SEO (Google Business Profile e diretórios de alta autoridade);',
+      'Relatório Mensal de Menções e Presença em Motores Generativos.',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Auditoria e Benchmarking em Mecanismos Generativos',
+        details: [
+          'Mapeamento de como ferramentas como ChatGPT, Perplexity, Copilot e Google Gemini respondem sobre o segmento da empresa;',
+          'Identificação de lacunas onde concorrentes são recomendados e sua empresa não aparece;',
+          'Criação da matriz de prompts de referência do setor.',
+        ],
+      },
+      {
+        title: '02. Otimização Semântica e Engenharia de Entidades',
+        details: [
+          'Adequação das informações em bases de conhecimento públicas e fontes consultadas por rastreadores de IA;',
+          'Implementação profunda de microdados Schema.org (Organization, Brand, Product, FAQ, Article);',
+          'Padronização de NAP (Nome, Endereço, Telefone) e consistência institucional na web.',
+        ],
+      },
+      {
+        title: '03. Produção de Conteúdo Orientado a Citações de IA',
+        details: [
+          'Desenvolvimento de conteúdos em formato de respostas definitivas, dados quantitativos e autoridade técnica;',
+          'Criação de artigos com estrutura amigável para indexação de modelos de retrieval-augmented generation (RAG);',
+          'Estratégia de relações públicas digitais para ampliação de citações em veículos de alto prestígio.',
+        ],
+      },
+      {
+        title: '04. Monitoramento Contínuo e Relatórios GEO',
+        details: [
+          'Testes recorrentes automatizados dos prompts-chave da vertical;',
+          'Avaliação do sentimento da marca e da precisão das respostas dadas pelas IAs;',
+          'Relatório analítico mensal de penetração em mecanismos de busca de nova geração.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Diagnóstico inicial de presença em IA entregue em até 10 dias úteis;',
+      'Ajustes estruturais no site e dados semânticos aplicados no primeiro mês;',
+      'Ciclos mensais de produção de conteúdo e testes de prompt;',
+      'Relatório mensal de menções em IAs entregue todo início de mês.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 3 },
+      { role: 'Projetos', hours: 1 },
+      { role: 'Especialista GEO / IA', hours: 10 },
+      { role: 'Redator Estratégico', hours: 6 },
+      { role: 'Analista de Dados', hours: 3 },
+    ],
+    contractTypeDefault: 'mensal',
+    defaultMonths: 12,
+    sigaJobReferences: [
+      { jobId: 'Job 18088', client: 'DBACorp', description: 'Generative Engine Optimization', hours: '5:30' },
+      { jobId: 'Job 19184', client: 'JFL Alarmes', description: 'Plano de SEO e GEO para o site', hours: '0:37' },
+      { jobId: 'Job 19183', client: 'CRDC', description: 'Plano de SEO e GEO para o site', hours: '9:50' },
+      { jobId: 'Job 18588', client: 'Hiro', description: 'Como fazer sua marca aparecer nas IAs, como ChatGPT?', hours: '2:14' },
+      { jobId: 'Job 18592', client: 'Hiro', description: 'SEO Técnico e IA: Seu site está preparado?', hours: '3:30' },
+    ],
+    iconName: 'Cpu',
+  },
+
+  materiais_impressos: {
+    id: 'materiais_impressos',
+    name: 'Materiais Impressos',
+    category: 'Branding',
+    shortDesc: 'Desenvolvimento e diagramação profissional de materiais gráficos para impressão: catálogos, folders, PDV, stands de feiras e embalagens.',
+    defaultScopeItems: [
+      'Alinhamento de Formatos, Facas de Corte e Especificações Gráficas;',
+      'Design e Diagramação Visual de Catálogos e Folders;',
+      'Criação de Peças de Ponto de Venda - PDV (Faixas, Wobblers, Stoppers, Displays);',
+      'Comunicação Visual para Feiras e Eventos (Painéis de Stand, Totens, Banners);',
+      'Embalagens, Rótulos e Adesivos Técnicos;',
+      'Fechamento de Arquivos em Padrão Gráfico Profissional (PDF/X-1a, CMYK, Sangrias).',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Criação e Diagramação de Peças Gráficas',
+        details: [
+          'Desenvolvimento de layout com identidade visual alinhada aos padrões da marca;',
+          'Tratamento de fotografias e ilustrações em altíssima resolução para impressão;',
+          'Organização editorial de textos, tabelas de especificações técnicas e fichas de produtos.',
+        ],
+      },
+      {
+        title: '02. Materiais para Ponto de Venda e Eventos',
+        details: [
+          'Design de peças de alto impacto visual para atração no PDV (faixas de gôndola, totens, testeiras);',
+          'Estruturação de painéis modulares e comunicação de stands para feiras de negócios;',
+          'Desenvolvimento de lâminas comerciais de apoio à equipe de vendas.',
+        ],
+      },
+      {
+        title: '03. Embalagens e Rótulos',
+        details: [
+          'Adaptação ou criação de rotulagem com informações nutricionais, legais e código de barras;',
+          'Acompanhamento de facas especiais e acabamentos (verniz localizado, hot stamping, laminação fosca).',
+        ],
+      },
+      {
+        title: '04. Fechamento Técnico e Pré-Impressão',
+        details: [
+          'Fechamento rigoroso de arquivos em padrão PDF/X-1a ou curvas abertas;',
+          'Conversão de cores para perfil CMYK e Pantone especificados;',
+          'Conferência de resolução mínima de 300 DPI e configuração precisa de sangrias e marcas de corte.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Reunião de briefing em até 05 dias úteis da aprovação;',
+      'Apresentação da primeira prova visual/layout em até 07 dias úteis;',
+      'Ajustes e refinamentos em até 02 dias úteis por rodada (limite de 03 rodadas);',
+      'Fechamento e entrega de arquivos prontos para a gráfica em até 03 dias úteis após aprovação final.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 5 },
+      { role: 'Diretor de Arte', hours: 10 },
+      { role: 'Assistente de Arte / Diagramador', hours: 22 },
+      { role: 'Redator', hours: 5 },
+      { role: 'Revisor', hours: 3 },
+    ],
+    contractTypeDefault: 'pontual',
+    defaultMonths: 1,
+    sigaJobReferences: [
+      { jobId: 'Job 12367', client: 'Cap-Lab', description: 'Catálogo Completo', hours: '31:39' },
+      { jobId: 'Job 13712', client: 'Grupo BTZ', description: 'Balcão para PDV', hours: '21:43' },
+      { jobId: 'Job 13713', client: 'Grupo BTZ', description: 'Layout - Adesivação: Frota baixa e Caminhões', hours: '17:53' },
+      { jobId: 'Job 13918', client: 'Master Martini', description: 'Bobina de forração - Master Martini', hours: '10:34' },
+      { jobId: 'Job 13920', client: 'Master Martini', description: 'Faixa de Gôndola - Master Martini', hours: '10:12' },
+      { jobId: 'Job 16199', client: 'Grupo BTZ', description: 'Stand - APAS 2025', hours: '9:55' },
+      { jobId: 'Job 17395', client: 'Grupo BTZ', description: 'Catálogo de Exportação', hours: '48:50' },
+      { jobId: 'Job 16555', client: 'Puranata', description: 'Revisão Embalagem - Cream Cheese', hours: '51:58' },
+    ],
+    iconName: 'Printer',
+  },
+
+  sistema_web: {
+    id: 'sistema_web',
+    name: 'Desenvolvimento de Sistema Web',
+    category: 'Web & Tech',
+    shortDesc: 'Desenvolvimento de softwares e portais sob medida, dashboards interativos, módulos administrativos e integrações via API.',
+    defaultScopeItems: [
+      'Levantamento de Requisitos e Arquitetura de Software;',
+      'UI/UX Design e Prototipação de Telas Responsivas;',
+      'Desenvolvimento Frontend (React / TypeScript / Tailwind CSS);',
+      'Desenvolvimento Backend e Banco de Dados (APIs RESTful, Autenticação e Regras de Negócio);',
+      'Integrações com Gateways de Pagamento, CRMs, ERPs e Webhooks;',
+      'Testes de Carga, QA, Homologação e Deploy Cloud.',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Arquitetura e Engenharia de Requisitos',
+        details: [
+          'Mapeamento completo das regras de negócio, fluxos de usuário e casos de uso;',
+          'Modelagem do banco de dados relacional e definição de microserviços/APIs;',
+          'Documentação de requisitos técnicos e infraestrutura de suporte.',
+        ],
+      },
+      {
+        title: '02. UI/UX Design e Prototipagem',
+        details: [
+          'Criação de design system com paleta de componentes padronizados;',
+          'Prototipação interativa de telas administrativas e áreas do usuário;',
+          'Validação da experiência do usuário (UX) antes da etapa de codificação.',
+        ],
+      },
+      {
+        title: '03. Desenvolvimento Frontend e Backend',
+        details: [
+          'Frontend com interface fluida, responsiva e suporte a operações em tempo real;',
+          'Backend robusto com autenticação segura (JWT / OAuth2), controle de permissões por perfil (RBAC) e logs de auditoria;',
+          'Banco de dados escalável com indexação e tratamento seguro de dados confidenciais (LGPD).',
+        ],
+      },
+      {
+        title: '04. Integrações, Testes e Publicação',
+        details: [
+          'Integrações com APIs externas (provedores de pagamento, emissão de nota, WhatsApp, ERPs);',
+          'Bateria de testes automatizados e validações manuais de qualidade (QA);',
+          'Deploy em ambiente de homologação e produção em nuvem (AWS ou Google Cloud).',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Briefing técnico e alinhamento de escopo nos primeiros 05 dias úteis;',
+      'Apresentação dos wireframes e protótipos de tela em até 15 dias úteis;',
+      'Entregas de módulos em sprints quinzenais com demonstrações ao cliente;',
+      'Homologação assistida e testes finais em até 45 dias úteis do kickoff;',
+      'Deploy em produção e treinamento com manual em até 60 dias úteis.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 8 },
+      { role: 'Gerente de Projetos', hours: 14 },
+      { role: 'UI/UX Designer', hours: 18 },
+      { role: 'Tech Lead / Arquiteto', hours: 16 },
+      { role: 'Desenvolvedor Frontend', hours: 36 },
+      { role: 'Desenvolvedor Backend', hours: 36 },
+      { role: 'QA / Testes', hours: 12 },
+    ],
+    contractTypeDefault: 'pontual',
+    defaultMonths: 1,
+    sigaJobReferences: [
+      { jobId: 'Job 18259', client: 'Milho de Ouro', description: 'Desenvolvimento de Bolão Interativo', hours: '42:14' },
+      { jobId: 'Job 19032', client: 'Sognare', description: 'Desenvolvimento de Calculadora Especializada', hours: '15:51' },
+      { jobId: 'Job 18328', client: 'Hiro', description: 'Integrar sistema CMO Summit com Banco de Dados', hours: '4:00' },
+      { jobId: 'Job 12310', client: 'Pulsar', description: 'Dashboard - Criar página de community', hours: '27:35' },
+      { jobId: 'Job 18031', client: 'Ôguen', description: 'Implementação da I.A no site', hours: '44:15' },
+      { jobId: 'Job 14752', client: 'Ôguen', description: 'Novo Site - Configurações Finais: Hubspot e Webhook', hours: '30:02' },
+    ],
+    iconName: 'Code',
+  },
+
+  redes_sociais: {
+    id: 'redes_sociais',
+    name: 'Produção de Conteúdo de Redes Sociais',
+    category: 'Audiovisual & Conteúdo',
+    shortDesc: 'Planejamento estratégico de pautas, criação de posts estáticos e carrosséis, redação de copys, agendamento e gestão de comunidade (SAC 2.0).',
+    defaultScopeItems: [
+      'Planejamento Estratégico Mensal de Conteúdo & Cronograma de Pautas;',
+      'Criação de Posts Estáticos e Carrosséis (Design Gráfico + Copywriting);',
+      'Roteiros para Vídeos Curtos (Reels, TikTok e Shorts);',
+      'Agendamento e Publicação em Software de Gestão de Redes Sociais;',
+      'Monitoramento de Menções e Gestão de Interações (SAC 2.0 Diário);',
+      'Relatórios Mensais de Desempenho e Engajamento da Comunidade.',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Planejamento Estratégico e Grade Editorial',
+        details: [
+          'Definição mensal de temas, datas comemorativas alinhadas ao nicho e pilares de autoridade;',
+          'Envio antecipado do calendário de postagens para aprovação prévia do cliente;',
+          'Pesquisa contínua de trends, referências e formatos com maior tração orgânica.',
+        ],
+      },
+      {
+        title: '02. Criação Visual e Textual de Conteúdos',
+        details: [
+          'Desenvolvimento de artes estáticas e carrosséis de alto impacto visual;',
+          'Redação de legendas persuasivas com gatilhos de engajamento, hashtags nichadas e CTAs claras;',
+          'Formatação otimizada para Instagram, LinkedIn, Facebook e TikTok;',
+          'Roteirização de vídeos e enquetes interativas para Stories.',
+        ],
+      },
+      {
+        title: '03. Gestão de Comunidade e SAC 2.0',
+        details: [
+          'Acompanhamento diário das publicações;',
+          'Resposta ativa a comentários, dúvidas frequentes e direcionamento de leads qualificados;',
+          'Monitoramento de menções e preservação da reputação da marca.',
+        ],
+      },
+      {
+        title: '04. Relatórios e Otimização Contínua',
+        details: [
+          'Consolidação mensal de alcance, impressões, taxa de engajamento e crescimento de seguidores;',
+          'Análise dos posts de maior performance e plano de ação tático para o mês seguinte.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Apresentação do calendário de conteúdo mensal até o dia 20 de cada mês;',
+      'Prazos para aprovação do cliente: 03 dias úteis;',
+      'Ajustes implementados em até 02 dias úteis;',
+      'Agendamento automático com 48h de antecedência da data programada de veiculação.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 8 },
+      { role: 'Planejamento', hours: 10 },
+      { role: 'Diretor de Arte', hours: 8 },
+      { role: 'Assistente de Arte', hours: 20 },
+      { role: 'Redator', hours: 14 },
+      { role: 'Revisor', hours: 4 },
+      { role: 'Community Manager / SAC 2.0', hours: 8 },
+      { role: 'Analista de Dados', hours: 4 },
+    ],
+    contractTypeDefault: 'mensal',
+    defaultMonths: 12,
+    sigaJobReferences: [
+      { jobId: 'Job 15055', client: 'Hiro', description: 'Follow Up Semanal e Conteúdo', hours: '355:31' },
+      { jobId: 'Job 12937', client: 'Andorinha', description: 'Interações e Alinhamentos Redes Sociais', hours: '1150:60' },
+      { jobId: 'Job 13757', client: 'Superfitas', description: 'Redes sociais: Embalagens e Usabilidades', hours: '5:45' },
+      { jobId: 'Job 15502', client: 'Hiro', description: 'Redes Sociais - Carnaval e marcas', hours: '6:48' },
+      { jobId: 'Job 16130', client: 'Fênix Hotéis', description: 'Redes sociais: [Carrossel] Espaço para eventos', hours: '4:14' },
+      { jobId: 'Job 17542', client: 'Grupo BTZ', description: 'Interações Redes Sociais', hours: '183:41' },
+    ],
+    iconName: 'Share2',
+  },
+
+  producao_video: {
+    id: 'producao_video',
+    name: 'Produção de Vídeo',
+    category: 'Audiovisual & Conteúdo',
+    shortDesc: 'Produção completa de vídeos institucionais, comerciais, cortes para Reels/TikTok, motion graphics e captação 4K.',
+    defaultScopeItems: [
+      'Alinhamento Conceitual, Roteiro e Storyboard;',
+      'Planejamento de Pré-produção e Diárias de Captação;',
+      'Captação de Imagens em 4K e Áudio Profissional com Equipe Técnica;',
+      'Edição, Montagem e Color Grading Cinematográfico;',
+      'Animações Gráficas (Motion Graphics, Lettering e Identidade Visual);',
+      'Trilha Sonora Licenciada, Efeitos Sonoros e Masterização de Áudio;',
+      'Finalização e Entrega nos Formatos Desejados (16:9, 9:16 e 1:1).',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Roteirização e Pré-Produção',
+        details: [
+          'Briefing criativo e pesquisa de referências audiovisuais;',
+          'Elaboração de roteiro completo com divisão de falas, indicações de cena e locução;',
+          'Produção de storyboard ou espelho de gravação;',
+          'Organização de cronograma de locação, equipamentos e equipe.',
+        ],
+      },
+      {
+        title: '02. Captação de Imagens e Áudio',
+        details: [
+          'Diária(s) de gravação com cinegrafista profissional e assistente de câmera;',
+          'Câmeras de cinema / mirrorless 4K, lentes prime e estabilizadores tipo gimbal;',
+          'Kit profissional de iluminação difusa e captação de áudio direto via microfones lapela sem fio.',
+        ],
+      },
+      {
+        title: '03. Pós-Produção e Edição Audiovisual',
+        details: [
+          'Decupagem do material bruto e montagem da narrativa principal;',
+          'Tratamento de cor (Color grading) para padrão cinematográfico consistente com a marca;',
+          'Inserção de cartelas, motion graphics, títulos e logotipos animados;',
+          'Seleção e licenciamento de trilha sonora livre de direitos autorais e sound design refinado.',
+        ],
+      },
+      {
+        title: '04. Finalização e Entregas Multiplataforma',
+        details: [
+          'Exportação no formato master Full HD / 4K para YouTube, apresentações e eventos;',
+          'Versões verticais (9:16) adaptadas para Reels, TikTok e Instagram com legendas dinâmicas;',
+          'Versões quadradas (1:1) para feeds e anúncios patrocinados.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Apresentação do roteiro em até 07 dias úteis após briefing;',
+      'Agendamento e realização das diárias de captação em até 10 dias úteis;',
+      'Apresentação do primeiro corte bruto em até 10 dias úteis pós-gravação;',
+      'Ajustes finais em até 03 dias úteis;',
+      'Entrega de todos os masters finalizados em até 25 dias úteis do kickoff.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 4 },
+      { role: 'Roteirista', hours: 8 },
+      { role: 'Diretor de Cena', hours: 10 },
+      { role: 'Operador de Câmera / Diretor de Fotografia', hours: 12 },
+      { role: 'Editor de Vídeo', hours: 18 },
+      { role: 'Motion Designer', hours: 8 },
+      { role: 'Revisor / Finalizador', hours: 4 },
+    ],
+    contractTypeDefault: 'pontual',
+    defaultMonths: 1,
+    sigaJobReferences: [
+      { jobId: 'Job 12700', client: 'Ôguen', description: 'Vídeo Institucional', hours: '179:47' },
+      { jobId: 'Job 13487', client: 'Czarnikow Group', description: 'Vídeo Institucional', hours: '26:26' },
+      { jobId: 'Job 10601', client: 'ADP', description: 'Vídeo Animação - Segurança e Saúde do Trabalho', hours: '16:31' },
+      { jobId: 'Job 13344', client: 'Grupo BTZ', description: 'Vídeo Institucional APAS SHOW 2024', hours: '25:45' },
+      { jobId: 'Job 12769', client: 'Hiro', description: 'Editar Episódios: No Meio do Job Podcast', hours: '9:45' },
+      { jobId: 'Job 18440', client: 'Hiro', description: 'Redes sociais - CMO Summit - Cortes', hours: '9:18' },
+    ],
+    iconName: 'Video',
+  },
+
+  producao_foto: {
+    id: 'producao_foto',
+    name: 'Produção de Foto',
+    category: 'Audiovisual & Conteúdo',
+    shortDesc: 'Sessão fotográfica profissional para catálogo, produtos (still/lifestyle), retratos corporativos e infraestrutura com pós-produção avançada.',
+    defaultScopeItems: [
+      'Planejamento de Ensaio Fotográfico e Lista de Tomadas (Shotlist);',
+      'Sessão de Fotos Presencial (Estúdio ou In Company);',
+      'Equipamentos de Câmeras Full-Frame e Iluminação de Estúdio;',
+      'Curadoria e Disponibilização de Galeria de Provas Digital;',
+      'Tratamento de Imagem Avançado e Retoque Digital Profissional;',
+      'Entrega em Altíssima Resolução (Print) e Versões Otimizadas (Web).',
+    ],
+    scopeDetailedDescription: [
+      {
+        title: '01. Planejamento do Ensaio Fotográfico',
+        details: [
+          'Definição de objetivos: fotos institucionais de equipe, instalações, produtos still ou lifestyle;',
+          'Criação de moodboard e lista detalhada de tomadas prioritárias;',
+          'Orientações prévias de figurino, cenário e iluminação.',
+        ],
+      },
+      {
+        title: '02. Sessão Fotográfica (Shooting)',
+        details: [
+          'Captação com fotógrafo experiente em ambiente corporativo ou estúdio próprio;',
+          'Câmeras fotográficas full-frame de alta resolução e lentes macro/telefoto profissionais;',
+          'Esquema de iluminação com tochas de flash, rebatedores e softboxes para luz limpa e equilibrada.',
+        ],
+      },
+      {
+        title: '03. Tratamento e Pós-Produção de Imagem',
+        details: [
+          'Seleção das melhores fotos em plataforma de aprovação online;',
+          'Color grading, correção de balanço de branco e equilíbrio de luzes;',
+          'Retoque digital profissional (recortes de fundo, limpeza de pele, eliminação de reflexos indesejados).',
+        ],
+      },
+      {
+        title: '04. Entrega dos Arquivos',
+        details: [
+          'Disponibilização via link seguro na nuvem com validade permanente;',
+          'Arquivos organizados em pastas por categoria;',
+          'Versões em alta definição (300 DPI / TIFF e JPEG) e versões compactadas para site e redes sociais.',
+        ],
+      },
+    ],
+    defaultDeliverySchedule: [
+      'Alinhamento e cronograma do shooting em até 05 dias úteis;',
+      'Realização da sessão fotográfica conforme data agendada;',
+      'Disponibilização da galeria de pré-seleção em até 03 dias úteis pós-ensaio;',
+      'Aprovação das fotos pelo cliente em até 05 dias úteis;',
+      'Entrega final das imagens tratadas em até 07 dias úteis após seleção.',
+    ],
+    defaultRoleHours: [
+      { role: 'Atendimento', hours: 3 },
+      { role: 'Diretor de Arte', hours: 6 },
+      { role: 'Fotógrafo', hours: 12 },
+      { role: 'Assistente de Iluminação', hours: 6 },
+      { role: 'Especialista em Tratamento de Imagens', hours: 10 },
+    ],
+    contractTypeDefault: 'pontual',
+    defaultMonths: 1,
+    sigaJobReferences: [
+      { jobId: 'Job 14485', client: 'Superfitas', description: 'Roteiro de ensaio fotográfico', hours: '2:31' },
+      { jobId: 'Job 14788', client: 'Superfitas', description: 'Selecionar fotos do Shooting', hours: '4:20' },
+      { jobId: 'Job 15127', client: 'Storage Healthcare', description: 'Manipulação de Imagens e Tratamento', hours: '10:43' },
+      { jobId: 'Job 16884', client: 'Hiro', description: 'Dia Mundial da Fotografia e Ensaio', hours: '4:57' },
+      { jobId: 'Job 17290', client: 'Studio GVisotto', description: 'Campanha Fotos Corporativas e Portfólios', hours: '4:52' },
+      { jobId: 'Job 17291', client: 'Studio GVisotto', description: 'Campanha Fotos Catálogo de Moda', hours: '5:31' },
+    ],
+    iconName: 'Camera',
+  },
+};

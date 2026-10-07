@@ -1,0 +1,6 @@
+{
+  "name": "Gerador de Propostas Comerciais - Hiro Comunicação",
+  "description": "Sistema oficial de geração e exportação de propostas comerciais em PDF e Word para a Hiro Comunicação com mensuração de horas baseada no SIGA SW.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
