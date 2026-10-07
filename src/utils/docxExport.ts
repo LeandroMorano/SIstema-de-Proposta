@@ -533,7 +533,7 @@ export async function generateDocxBlob(proposal: ProposalData): Promise<Blob> {
       spacing: { after: 200 },
       children: [
         new TextRun({
-          text: `No total serão alocados os seguintes profissionais para execução da operação (mensuração baseada no histórico SIGA SW):`,
+          text: 'No total serão alocados os seguintes profissionais para execução da operação:',
           size: 19,
         }),
       ],

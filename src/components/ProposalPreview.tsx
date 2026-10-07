@@ -63,7 +63,11 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({
       >
         {/* Top Header Logo & Gradient Bar */}
         <div className="w-full flex flex-col items-center pt-8">
-          <HiroLogo className="h-12 w-auto mb-6" />
+          <img
+            src="/hiro-logo-transparent.png"
+            alt="Hiro Comunicação"
+            className="h-16 w-auto mb-6 select-none"
+          />
           <HiroGradientBar height="h-1.5" />
         </div>
 
@@ -204,13 +208,13 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({
               </p>
               <p>www.hirocomunicacao.com.br</p>
             </div>
-            <HiroLogo className="h-5 w-auto" />
+            <HiroLogo className="h-6 w-auto" />
           </div>
         </div>
       </div>
 
       {/* ========================================================
-          PAGE 3: PRAZOS & TABELA DE RECURSOS ALOCADOS (SIGA SW)
+          PAGE 3: PRAZOS & TABELA DE RECURSOS ALOCADOS
           ======================================================== */}
       <div
         className="proposal-printable-page relative w-[210mm] min-h-[297mm] bg-white shadow-xl print:shadow-none px-12 py-10 flex flex-col justify-between box-border overflow-hidden print:m-0 print:min-h-screen print:w-full"
@@ -242,15 +246,12 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({
             </ul>
           </div>
 
-          {/* Recursos Alocados com base no SIGA SW */}
+          {/* Recursos Alocados */}
           <div className="mb-6">
             <div className="flex items-center justify-between mb-2">
               <h2 className="text-xs font-bold text-neutral-950 uppercase tracking-wide">
                 Recursos Alocados:
               </h2>
-              <span className="text-[10px] text-neutral-500 font-mono">
-                Mensuração baseada no Relatório de Horas SIGA SW
-              </span>
             </div>
             <p className="text-[12px] text-neutral-700 leading-relaxed mb-3">
               No total serão alocados os seguintes profissionais para a execução técnica e estratégica
@@ -295,9 +296,6 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({
                 </tbody>
               </table>
             </div>
-            <p className="text-[11px] text-neutral-500 italic">
-              * A distribuição de horas reflete a média apurada em demandas reais do sistema de controladoria Hiro (SIGA SW).
-            </p>
           </div>
 
           {/* Observações */}
@@ -349,7 +347,7 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({
               </p>
               <p>www.hirocomunicacao.com.br</p>
             </div>
-            <HiroLogo className="h-5 w-auto" />
+            <HiroLogo className="h-6 w-auto" />
           </div>
         </div>
       </div>
@@ -526,7 +524,7 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({
               </p>
               <p>www.hirocomunicacao.com.br</p>
             </div>
-            <HiroLogo className="h-5 w-auto" />
+            <HiroLogo className="h-6 w-auto" />
           </div>
         </div>
       </div>
@@ -669,7 +667,7 @@ export const ProposalPreview: React.FC<ProposalPreviewProps> = ({
               </p>
               <p>www.hirocomunicacao.com.br</p>
             </div>
-            <HiroLogo className="h-5 w-auto" />
+            <HiroLogo className="h-6 w-auto" />
           </div>
         </div>
       </div>

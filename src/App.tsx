@@ -16,7 +16,9 @@ import {
   ZoomOut,
   CheckCircle2,
   AlertCircle,
-  HelpCircle,
+  Download,
+  Printer,
+  ChevronRight,
 } from 'lucide-react';
 
 const INITIAL_SERVICE: ServiceTypeId = 'desenvolvimento_site';
@@ -56,8 +58,8 @@ const INITIAL_PROPOSAL: ProposalData = {
 
 export default function App() {
   const [proposal, setProposal] = useState<ProposalData>(INITIAL_PROPOSAL);
-  const [viewMode, setViewMode] = useState<'split' | 'editor' | 'preview'>('split');
-  const [zoomLevel, setZoomLevel] = useState<number>(0.9);
+  const [viewMode, setViewMode] = useState<'editor' | 'preview' | 'split'>('split');
+  const [zoomLevel, setZoomLevel] = useState<number>(0.85);
   const [isBenchmarkOpen, setIsBenchmarkOpen] = useState<boolean>(false);
   const [isExportingPdf, setIsExportingPdf] = useState<boolean>(false);
   const [isExportingDocx, setIsExportingDocx] = useState<boolean>(false);
@@ -106,15 +108,10 @@ export default function App() {
       showToast('Proposta exportada em PDF oficial com sucesso!');
     } catch (err) {
       console.error(err);
-      showToast('Erro ao exportar PDF. Tente usar a opção Imprimir.', 'error');
+      showToast('Erro ao exportar PDF. Tente a opção Imprimir.', 'error');
     } finally {
       setIsExportingPdf(false);
     }
-  };
-
-  // Browser Print
-  const handlePrint = () => {
-    printProposal();
   };
 
   // Reset to initial
@@ -125,14 +122,25 @@ export default function App() {
     }
   };
 
+  const totalRolesHours =
+    proposal.items[0]?.allocatedRoles.reduce((sum, r) => sum + r.hours, 0) || 0;
+  const hourlyRate = proposal.hourlyRate || 200;
+  const isMonthly = proposal.contractType === 'mensal';
+  const months = isMonthly ? proposal.contractMonths || 12 : 1;
+  const baseValue = isMonthly ? totalRolesHours * hourlyRate * months : totalRolesHours * hourlyRate;
+  const atSightValue = baseValue * 0.9;
+
+  const formatCurrency = (val: number) =>
+    new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(val);
+
   return (
-    <div className="min-h-screen bg-neutral-100 flex flex-col font-sans text-neutral-900">
+    <div className="min-h-screen bg-neutral-100/70 flex flex-col font-sans text-neutral-900 selection:bg-purple-100 selection:text-purple-900">
       {/* Top Navbar */}
       <TopNav
         proposalCode={proposal.proposalCode}
         onExportPdf={handleExportPdf}
         onExportDocx={handleExportDocx}
-        onPrint={handlePrint}
+        onPrint={printProposal}
         onOpenBenchmark={() => setIsBenchmarkOpen(true)}
         onReset={handleReset}
         isExportingPdf={isExportingPdf}
@@ -165,7 +173,7 @@ export default function App() {
             }`}
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
-            <span>Editar Escopo</span>
+            <span>Editar Proposta</span>
           </button>
           <button
             type="button"
@@ -177,7 +185,7 @@ export default function App() {
             }`}
           >
             <Eye className="w-3.5 h-3.5" />
-            <span>Ver Documento</span>
+            <span>Visualizar Documento</span>
           </button>
         </div>
 
@@ -190,7 +198,7 @@ export default function App() {
           <span className="text-neutral-300">·</span>
           <span className="flex items-center gap-1">
             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-            À vista no boleto: <strong>10% desconto</strong>
+            À vista no boleto: <strong>10% OFF ({formatCurrency(atSightValue)})</strong>
           </span>
           <span className="text-neutral-300">·</span>
           <span className="flex items-center gap-1">
@@ -204,7 +212,7 @@ export default function App() {
           <div className="flex items-center gap-1 bg-neutral-100 p-0.5 rounded-md text-neutral-600">
             <button
               type="button"
-              onClick={() => setZoomLevel((z) => Math.max(0.6, z - 0.1))}
+              onClick={() => setZoomLevel((z) => Math.max(0.5, z - 0.1))}
               className="p-1 hover:text-neutral-900 hover:bg-white rounded transition-colors"
               title="Reduzir zoom"
             >
@@ -215,7 +223,7 @@ export default function App() {
             </span>
             <button
               type="button"
-              onClick={() => setZoomLevel((z) => Math.min(1.3, z + 0.1))}
+              onClick={() => setZoomLevel((z) => Math.min(1.4, z + 0.1))}
               className="p-1 hover:text-neutral-900 hover:bg-white rounded transition-colors"
               title="Aumentar zoom"
             >
@@ -223,20 +231,22 @@ export default function App() {
             </button>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setIsBenchmarkOpen(true)}
-            className="flex items-center gap-1 px-2.5 py-1 text-purple-700 bg-purple-50 hover:bg-purple-100 rounded-md font-semibold text-[11px] transition-colors"
-          >
-            <HelpCircle className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Origem das Horas</span>
-          </button>
+          {viewMode === 'editor' && (
+            <button
+              type="button"
+              onClick={() => setViewMode('preview')}
+              className="flex items-center gap-1 px-3 py-1 bg-purple-600 text-white rounded-md text-xs font-semibold hover:bg-purple-700 transition-colors shadow-2xs"
+            >
+              <span>Ver Documento</span>
+              <ChevronRight className="w-3 h-3" />
+            </button>
+          )}
         </div>
       </div>
 
       {/* Toast Notification */}
       {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-lg shadow-xl text-xs font-semibold transition-all animate-bounce bg-white border border-neutral-200">
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 rounded-lg shadow-xl text-xs font-semibold transition-all bg-white border border-neutral-200">
           {toastMessage.type === 'success' ? (
             <CheckCircle2 className="w-4 h-4 text-emerald-600" />
           ) : (
@@ -251,10 +261,10 @@ export default function App() {
         {/* Editor Column */}
         {(viewMode === 'split' || viewMode === 'editor') && (
           <aside
-            className={`overflow-y-auto p-4 sm:p-6 transition-all border-r border-neutral-200/80 bg-neutral-50/50 print:hidden ${
+            className={`overflow-y-auto p-4 sm:p-6 transition-all border-r border-neutral-200 bg-neutral-50/70 print:hidden ${
               viewMode === 'split'
-                ? 'w-full lg:w-[480px] xl:w-[540px] shrink-0'
-                : 'w-full max-w-4xl mx-auto'
+                ? 'w-full lg:w-[500px] xl:w-[580px] shrink-0'
+                : 'w-full max-w-4xl mx-auto py-8'
             }`}
           >
             <div className="max-w-2xl mx-auto">
@@ -262,6 +272,7 @@ export default function App() {
                 proposal={proposal}
                 onChange={setProposal}
                 onOpenBenchmark={() => setIsBenchmarkOpen(true)}
+                onNavigateToPreview={() => setViewMode('preview')}
               />
             </div>
           </aside>
@@ -269,7 +280,46 @@ export default function App() {
 
         {/* Live Preview Column */}
         {(viewMode === 'split' || viewMode === 'preview') && (
-          <section className="flex-1 overflow-y-auto bg-neutral-200/70 p-4 sm:p-8 flex justify-center">
+          <section className="flex-1 overflow-y-auto bg-neutral-200/80 p-4 sm:p-8 flex flex-col items-center">
+            {/* Quick action floating strip when in full preview */}
+            {viewMode === 'preview' && (
+              <div className="w-full max-w-[210mm] mb-4 bg-white p-3 rounded-xl border border-neutral-200 shadow-sm flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-2">
+                  <span className="font-bold text-neutral-900">{proposal.proposalCode}</span>
+                  <span className="text-neutral-400">·</span>
+                  <span className="text-neutral-600">{proposal.client.companyName}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={handleExportDocx}
+                    disabled={isExportingDocx}
+                    className="flex items-center gap-1.5 px-3 py-1.5 font-semibold text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg border border-blue-200 transition-colors"
+                  >
+                    <FileText className="w-3.5 h-3.5" />
+                    <span>Word (.docx)</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleExportPdf}
+                    disabled={isExportingPdf}
+                    className="flex items-center gap-1.5 px-3.5 py-1.5 font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors shadow-xs"
+                  >
+                    <Download className="w-3.5 h-3.5" />
+                    <span>Baixar PDF</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={printProposal}
+                    className="p-1.5 text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 rounded-lg transition-colors"
+                    title="Imprimir"
+                  >
+                    <Printer className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            )}
+
             <div
               style={{
                 transform: `scale(${zoomLevel})`,
@@ -289,7 +339,7 @@ export default function App() {
         onClose={() => setIsBenchmarkOpen(false)}
         selectedServiceId={proposal.primaryServiceId}
         onSelectService={(svcId) => {
-          // Can allow changing directly if desired
+          // Keep active service in sync if desired
         }}
       />
     </div>
